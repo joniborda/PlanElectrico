@@ -1,10 +1,12 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Archivo {
 
-	public PlanElectrico leer(String archivo) throws FileNotFoundException {
+	public static PlanElectrico leer(String archivo) throws FileNotFoundException {
 		
 		File file = new File(archivo);
 		Scanner scanner = new Scanner(file);
@@ -24,5 +26,15 @@ public class Archivo {
 		
 		scanner.close();
 		return planElectrico;
+	}
+	
+	public static void escribir(String archivo, int resultado) throws IOException {
+		
+		File file = new File(archivo);
+		FileWriter fw = new FileWriter(file);
+		
+		fw.write(resultado);
+		
+		fw.close();
 	}
 }
