@@ -29,7 +29,7 @@ public class PlanElectrico {
 		this.matriz = matriz;
 	}
 	
-	public ArrayList<Integer> getCiudades() {
+	public ArrayList<Nodo> getCiudades() {
 		return this.ciudades;
 	}
 	
