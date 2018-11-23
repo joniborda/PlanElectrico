@@ -5,12 +5,12 @@ public class PlanElectrico {
 	private int cantidadCiudades;
 	private int cantidadCiudadesElectricas;
 	private MatrizSimetrica matriz;
-	private ArrayList<Integer> ciudades;
+	private ArrayList<Nodo> ciudades;
 	
 	public PlanElectrico(int cantidadCiudades, int cantidadCiudadesElectricas) {
 		this.cantidadCiudades = cantidadCiudades;
 		this.cantidadCiudadesElectricas = cantidadCiudadesElectricas;
-		this.ciudades = new ArrayList<Integer>();
+		this.ciudades = new ArrayList<Nodo>();
 	}
 
 	public int getCantidadCiudadesElectricas() {
@@ -18,7 +18,7 @@ public class PlanElectrico {
 	}
 
 	public void addCiudadElectrica(int ciudad) {
-		this.ciudades.add(ciudad);
+		this.ciudades.add(new Nodo(ciudad, true));
 	}
 
 	public int getCantidadCiudades() {
@@ -27,5 +27,13 @@ public class PlanElectrico {
 
 	public void setMatriz(MatrizSimetrica matriz) {
 		this.matriz = matriz;
+	}
+	
+	public ArrayList<Integer> getCiudades() {
+		return this.ciudades;
+	}
+	
+	public int resolver() {
+		return 3;
 	}
 }

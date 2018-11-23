@@ -21,6 +21,8 @@ public class Archivo {
 			}
 		}
 		planElectrico.setMatriz(matriz);
+		
+		scanner.close();
 		return planElectrico;
 	}
 }
