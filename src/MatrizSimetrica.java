@@ -14,6 +14,9 @@ public class MatrizSimetrica {
 	}
 	
 	public int getCosto(int fila, int columna) {
+		if (fila == columna) {
+			return 0;
+		}
 		if (fila < columna) {
 			return this.matriz[fila][columna];
 		}
