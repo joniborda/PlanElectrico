@@ -17,10 +17,9 @@ public class MatrizSimetrica {
 		if (fila == columna) {
 			return 0;
 		}
-		if (fila < columna) {
+		if (fila > columna) {
 			return this.matriz[fila][columna];
 		}
-		
 		return this.matriz[columna][fila];
 	}
 	
