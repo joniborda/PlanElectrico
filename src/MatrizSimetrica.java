@@ -33,6 +33,7 @@ public class MatrizSimetrica {
 			System.out.println(fila + " " + columna);
 
 			this.matriz[fila][columna] = costo;
+			return;
 		}
 		this.matriz[columna][fila] = costo;
 	}

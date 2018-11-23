@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Archivo {
@@ -30,11 +31,9 @@ public class Archivo {
 	
 	public static void escribir(String archivo, int resultado) throws IOException {
 		
-		File file = new File(archivo);
-		FileWriter fw = new FileWriter(file);
-		
-		fw.write(resultado);
-		
-		fw.close();
+		PrintWriter pw = new PrintWriter(new FileWriter(archivo));
+
+		pw.println(resultado);
+		pw.close();
 	}
 }
