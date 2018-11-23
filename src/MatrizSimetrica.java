@@ -25,10 +25,15 @@ public class MatrizSimetrica {
 	}
 	
 	public void setCosto(int fila, int columna, int costo) {
-		if (fila < columna) {
+		if (fila == columna) {
+			return;
+		}
+		System.out.println(fila + " " + columna);
+		if (fila > columna) {	
+			System.out.println(fila + " " + columna);
+
 			this.matriz[fila][columna] = costo;
 		}
-		
 		this.matriz[columna][fila] = costo;
 	}
 }

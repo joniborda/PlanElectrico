@@ -13,7 +13,7 @@ public class Archivo {
 		
 		PlanElectrico planElectrico = new PlanElectrico(scanner.nextInt(), scanner.nextInt());
 		for (int i = 0; i < planElectrico.getCantidadCiudadesElectricas(); i++) {
-			planElectrico.addCiudadElectrica(scanner.nextInt());
+			planElectrico.addCiudadElectrica(scanner.nextInt()-1);
 		}
 		
 		MatrizSimetrica matriz = new MatrizSimetrica(planElectrico.getCantidadCiudades());
