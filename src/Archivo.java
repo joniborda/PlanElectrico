@@ -14,7 +14,6 @@ public class Archivo {
 			planElectrico.addCiudadElectrica(scanner.nextInt());
 		}
 		
-		
 		for (int i = 0; i < planElectrico.getCantidadCiudades(); i++) {
 			for (int j = 0; j < planElectrico.getCantidadCiudades(); j++) {
 				
