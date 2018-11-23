@@ -15,9 +15,9 @@ public class PlanElectrico {
 
 	public int resolver() {
 		int costoTotal = 0;
+		int costoMin = 999999;
 		for (Nodo n : this.ciudades) {
 			if (!n.isElectrica()) {
-				int costoMin = 999999;
 				for (int i = 0; i < this.cantidadCiudades; i++) {
 					if (costoMin > this.matriz.getCosto(n.getCiudad(), i) && this.esElectrico(i)) {
 						costoMin = this.matriz.getCosto(n.getCiudad(), i);
@@ -39,7 +39,7 @@ public class PlanElectrico {
 	}
 
 	public boolean esElectrico(int numeroDeNodo) {
-		return this.ciudades.get(numeroDeNodo - 1).isElectrica();
+		return this.ciudades.get(numeroDeNodo).isElectrica();
 	}
 
 	public int getCantidadCiudades() {
