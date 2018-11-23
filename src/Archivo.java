@@ -20,6 +20,7 @@ public class Archivo {
 				matriz.setCosto(i, j, scanner.nextInt());
 			}
 		}
-		return null;
+		planElectrico.setMatriz(matriz);
+		return planElectrico;
 	}
 }
