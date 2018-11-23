@@ -5,17 +5,21 @@ public class PlanElectrico {
 	private int cantidadCiudades;
 	private int cantidadCiudadesElectricas;
 	private MatrizSimetrica matriz;
-	private ArrayList<Nodo> ciudades;
+	private Nodo[] ciudades;
 
 	public PlanElectrico(int cantidadCiudades, int cantidadCiudadesElectricas) {
 		this.cantidadCiudades = cantidadCiudades;
 		this.cantidadCiudadesElectricas = cantidadCiudadesElectricas;
-		this.ciudades = new ArrayList<Nodo>();
+		this.ciudades = new Nodo[cantidadCiudades];
+		for (int i = 0; i < this.cantidadCiudades; i++) {
+			this.ciudades[i] = new Nodo(i, false);
+		}
 	}
 
 	public int resolver() {
 		int costoTotal = 0;
 		for (Nodo n : this.ciudades) {
+			System.out.println(n.isElectrica());
 			if (!n.isElectrica()) {
 				int costoMin = 999999;
 				for (int i = 0; i < this.cantidadCiudades; i++) {
@@ -35,11 +39,11 @@ public class PlanElectrico {
 	}
 
 	public void addCiudadElectrica(int ciudad) {
-		this.ciudades.add(new Nodo(ciudad, true));
+		this.ciudades[ciudad] = new Nodo(ciudad, true);
 	}
-
+	
 	public boolean esElectrico(int numeroDeNodo) {
-		return this.ciudades.get(numeroDeNodo - 1).isElectrica();
+		return this.ciudades[numeroDeNodo - 1].isElectrica();
 	}
 
 	public int getCantidadCiudades() {
@@ -48,10 +52,6 @@ public class PlanElectrico {
 
 	public void setMatriz(MatrizSimetrica matriz) {
 		this.matriz = matriz;
-	}
-
-	public ArrayList<Nodo> getCiudades() {
-		return this.ciudades;
 	}
 
 }

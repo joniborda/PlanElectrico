@@ -28,10 +28,7 @@ public class MatrizSimetrica {
 		if (fila == columna) {
 			return;
 		}
-		System.out.println(fila + " " + columna);
 		if (fila > columna) {	
-			System.out.println(fila + " " + columna);
-
 			this.matriz[fila][columna] = costo;
 			return;
 		}
