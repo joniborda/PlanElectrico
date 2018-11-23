@@ -20,4 +20,12 @@ public class MatrizSimetrica {
 		
 		return this.matriz[columna][fila];
 	}
+	
+	public void setCosto(int fila, int columna, int costo) {
+		if (fila < columna) {
+			this.matriz[fila][columna] = costo;
+		}
+		
+		this.matriz[columna][fila] = costo;
+	}
 }
